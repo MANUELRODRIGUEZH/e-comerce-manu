@@ -1,11 +1,13 @@
 import React from "react"
 import { useEffect, useState } from "react";
 import MockedItems from "../../mock/MockedItems";
+import ItemList from "../../components/ItemList";
+
 
 const ItemListContainer = () => {
 
 
-        const [item, setItem] = useState([]);
+        const [items, setItem] = useState([]);
 
 
         useEffect(() => {
@@ -14,20 +16,10 @@ const ItemListContainer = () => {
           });
       
           itemPromeise.then((res) => setItem(res));
-        }, [item]);
+        }, [items]);
         
-        return <Itemlist items={items}/>
-        /*(
-         <>
-            {Item.map((categoria) => {
-              return (
-                <a key={categoria.catId} href={categoria.ruta} style={styles.link}>
-                  <li>{categoria.nombre}</li>
-                </a>
-              );
-            })}
-          </>
-        );*/
+        return <ItemList items={items} />;
+       
       };
       
 

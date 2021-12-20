@@ -1,10 +1,10 @@
 
 
-const Item = ({title, description }) =>(
-    <div>
-        <h1>{title}</h1>
-        <p>{description}</p>
-
+const Item = ({item}) =>(
+    <div class="card" >
+        <h1>{item.title}</h1>
+        <p>{item.id}</p>
+        <p>{item.price}</p>
     </div>
 
 
